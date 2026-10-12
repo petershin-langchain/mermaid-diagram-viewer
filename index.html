@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mermaid Studio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div class="brand"><span class="logo">M</span> Mermaid <strong>Studio</strong></div><span class="tag">TEXT → DIAGRAM</span></header>
+  <main>
+    <section class="editor" aria-label="Diagram source">
+      <div class="panel-heading"><h1>Source</h1><span>MERMAID</span></div>
+      <p class="hint">Write a diagram. See it take shape.</p>
+      <label class="sr-only" for="source">Mermaid diagram source</label>
+      <textarea id="source" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+      <div class="editor-footer"><span id="lines"></span><button id="example">Load example</button></div>
+    </section>
+    <section class="preview" aria-label="Diagram preview">
+      <div class="preview-heading"><div><h2>Canvas</h2><span id="status" role="status">Loading Mermaid…</span></div><button id="download" disabled>↓ Export SVG</button></div>
+      <div id="viewport" tabindex="0" aria-label="Diagram canvas. Scroll to zoom, drag to pan. Use plus and minus keys to zoom, zero to fit.">
+        <div id="diagram"></div>
+        <div id="empty">Loading the diagram renderer…</div>
+      </div>
+      <div id="error" role="alert" hidden></div>
+      <div class="canvas-footer"><span>Scroll or pinch to zoom · Drag to pan</span><div class="controls"><button id="out" aria-label="Zoom out">−</button><span id="zoom">100%</span><button id="in" aria-label="Zoom in">+</button><span class="divider"></span><button id="fit">Fit</button></div></div>
+    </section>
+  </main>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
